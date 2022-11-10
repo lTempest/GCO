@@ -2,18 +2,44 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <title>{% block title %}Home{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Site vitrinne pour afficher les evenements des l'association GCO pouvant mener les utilisateurs a s'inscrire ou se tenir au courant des futurs evenements">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
+        <header>
+            <a href="/"><img src="{{ asset('assets/img/logo/logogco.webp') }}" alt="logo" width="70px"/></a>
+            <ul id="burger_menu">
+                <li><a href="/evenements">Events</a></li>            
+                <li><a href="/association">L'association</a></li>            
+                <li><a href="/equipes">Équipes Esport</a></li>            
+                <li><a href="/partenaires">Nos partenaires</a></li>            
+            </ul>
+            <button id="burger"><img src="{{ asset('assets/img/logo/list.png') }}" alt="list" /></button>
+        </header>
         {% block body %}{% endblock %}
+        <footer>
+            <a href="/"><img src="{{ asset('assets/img/logo/logogco.webp') }}" alt="logo" width="70px"/></a>
+            <h2 id="burger_logo">Nous suivres</h2>
+            <nav id="footlogo">
+                <a href="https://www.facebook.com/CentreDuJeu/" target="_blank"><img src="{{ asset('assets/img/logo/fb.webp') }}" alt="facebook" /></a>
+                <a href="https://www.instagram.com/game_center34/" target="_blank"><img src="{{ asset('assets/img/logo/insta.webp') }}" alt="insta" /></a>
+                <a href="https://twitter.com/GameCenter34?s=20" target="_blank"><img src="{{ asset('assets/img/logo/twitter.webp') }}" alt="twitter" /></a>
+                <a href="https://twitch.tv/gamecenteronline" target="_blank"><img src="{{ asset('assets/img/logo/twitch.webp') }}" alt="twitch" /></a>
+                <a href="https://www.youtube.com/channel/UCihn5gaXRhWfzGPanv8iIlQ" target="_blank"><img src="{{ asset('assets/img/logo/ytb.webp') }}" alt="youtube" /></a>
+                <a href="https://www.tiktok.com/@gamecenteronline" target="_blank"><img src="{{ asset('assets/img/logo/tiktok.webp') }}" alt="tiktok" /></a>
+                <a href="https://discord.gg/VjyMHbW" target="_blank"><img src="{{ asset('assets/img/logo/discord.webp') }}" alt="discord" /></a>
+            </nav>
+        </footer>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
     </body>
 </html>

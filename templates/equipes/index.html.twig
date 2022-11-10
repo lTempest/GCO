@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipes E−Sports{% endblock %}
+
+{% block body %}
+<main>
+    <article class="teams">
+        <div class="titleteams">
+            <h1>Teams</h1>
+            <h2>Nos Équipes <span> Esport</span></h2>
+        </div>
+            <nav id="affteam"> 
+                {% for team in teams %}
+                    <div class="card_team">
+                        <a href="{{ path('app_equipes2', { slug : team.games.getNameGame()|replace({' ': "_"}) }) }}"><img src="{{ asset('assets/img/attachgame/' ~ team.games.attach ) }}" alt="affiche" width="250px" heigth="250px"/></a>
+                    </div>
+                {% endfor %}
+            </nav>
+    </article>
+</main>
+{% endblock %}

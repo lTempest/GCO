@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<main>
+    <div class="titleevents">
+        <h1>Events</h1>
+        <h2>Derniers <span>events</span></h2>
+    </div>
+    {% for event in events|slice(0, 3) %}
+        {% if event.tournament == true %}
+            <nav class="inscription">
+                <img src="{{ asset('assets/img/afficheJeux/' ~ event.game.getimgGame() ) }}" alt="logo" width="60px" heigth="60px" />
+                <p class="titret"> {{ event.Title }} </p>
+                <p class="titret2"> {{ event.subtitle }}</p>
+                <p class='fordate'> Du: <span> {{ event.getStartDate()|date('d/m/y') }} </span> Au <span>{{ event.getEndDate()|date('d/m/y') }}</span></p>
+                <a class='insciptionbtn' href="{{ event.slug }}" target="_blank">S'inscrire</a>  
+            </nav>
+            {% endif %}
+    {% endfor %}
+    
+    <article class="association">
+        <h1>L'association</h1>
+        <p>Le Game Center Online est un événement qui a été créé par le Groupement Numérique Universitaire (GNU) et a commencé à prendre son indépendance au début de la crise du Covid-19. Le projet a par la suite grandi et a décidé de devenir indépendant du GNU.</p>
+        <br/>
+        <p>Le Game Center est une association ayant pour but d’organiser des événements sur différents jeux. Au début, les tournois se passaient exclusivement en ligne mais certains gros événements ont pu se dérouler en présentiel. Cette même association gère plusieurs équipes e-sportives représentant le Game Center sur différents jeux et tournois, tout en permettant à ces équipes d’être suivies et encadrées...<a href="/association">En savoir plus </a></p>
+        <img src='{{ asset('assets/img/salle.jpg') }}' alt='bureau' width="600px" />
+    </article>
+
+    <nav id="barreresau" >
+        <p class="fontpls">Suivez-nous<p>   
+        <div class="logo2">
+            <a href="https://www.facebook.com/CentreDuJeu/" target="_blank"><img src="{{ asset('assets/img/logo/fb.webp') }}" alt="facebook" width="70px" /></a>
+            <a href="https://www.instagram.com/game_center34/" target="_blank"><img src="{{ asset('assets/img/logo/insta.webp') }}" alt="insta" width="70px"  /></a>
+            <a href="https://twitter.com/GameCenter34?s=20" target="_blank"><img src="{{ asset('assets/img/logo/twitter.webp') }}" alt="twitter" width="70px" /></a>
+            <a href="https://twitch.tv/gamecenteronline" target="_blank"><img src="{{ asset('assets/img/logo/twitch.webp') }}" alt="twitch" width="70px"  /></a>
+            <a href="https://www.youtube.com/channel/UCihn5gaXRhWfzGPanv8iIlQ" target="_blank"><img src="{{ asset('assets/img/logo/ytb.webp') }}" alt="youtube" width="70px" /></a>
+            <a href="https://www.tiktok.com/@gamecenteronline" target="_blank"><img src="{{ asset('assets/img/logo/tiktok.webp') }}" alt="tiktok" width="70px" /></a>
+            <a class="one" href="https://discord.gg/VjyMHbW" target="_blank"><img src="{{ asset('assets/img/logo/discord.webp') }}" alt="discord" width="70px" /></a>
+        </div>
+    </nav>
+
+    <article class="teams">
+        <div class="titleteams">
+            <h1>Teams</h1>
+            <h2>Nos Équipes <span> Esport</span></h2>
+        </div>
+            <nav id="affteam"> 
+                {% for game in games %}
+                    <div class="card_team">
+                        <a href="{{ path('app_equipes2', { slug : game.getNameGame()|replace({' ': "_"})}) }}"><img src="{{ asset('assets/img/attachgame/' ~ game.attach ) }}" alt="affiche" width="250px" heigth="400px"/></a>
+                    </div>
+                {% endfor %}
+            </nav>
+    </article>
+
+    <article id="partenaire">
+        <div class="titlepart">
+            <h1>Partenaires</h1>
+            <h2>Nos <span>partenaires</span></h2>
+        </div>
+        <nav class="logopart">
+            <img src="{{ asset('assets/img/logo/universit.png') }}" alt="discord" width="250px" />
+            <a href="https://sgnw.fr/" target='_blank'><img src="{{ asset('assets/img/logo/sgn.png') }}" alt="discord" width="250px"/></a>
+        </nav>
+    </article>
+</main>
+
+{% endblock %}

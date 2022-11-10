@@ -1,0 +1,41 @@
+{% extends 'base.html.twig'%}
+
+{% block title %}Equipe E-Sport{% endblock %}
+
+{% block body %}
+<main>
+    <nav>
+        <ul class="barequipe">
+            {% for team in teams %}
+                <li><a href="{{ path('app_equipes2', { slug : team.games.getNameGame()|replace({' ': "_"}) }) }}">{{ team.games.getNameGame() }}</a></li> 
+            {% endfor %}
+        </ul>
+    </nav>
+    <article class="contentp">
+        {% for game in games %}
+            <ul class='card_player'>
+                <li><img src="{{ asset('assets/img/photograph/' ~ game.photograph ) }}" alt="logo" width="250px" heigth="250px" />
+                    <div class="playercardh">
+                        <ul class="under-img">
+                            <li>{{ game.nickname }}</li>
+                            {% if game.role is not null %}
+                                <li class="prole">{{ game.role }}</li>
+                            {% endif %}
+                            <li>{{ game.age }}</li>
+                            <li>{{ game.nationality }}</li>
+                        </ul>
+                        <ul class="presaux">
+                            {% if game.Twitter is not null %}
+                                <li><a href="{{ game.Twitter }}" target="_blank"><img src="{{ asset('assets/img/logo/twitter.png') }}" alt="twitter" /></a></li>
+                            {% endif %}
+                            {% if game.Twitch is not null %}
+                                <li><a href="{{ game.Twitch }}" target="_blank"><img src="{{ asset('assets/img/logo/twitch.png') }}" alt="twitch" /></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                <li>
+            </ul>
+        {% endfor %}
+    </article>
+</main>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evenements{% endblock %}
+
+{% block body %}
+<main>
+    <div class="titleevents">
+        <h1>Events</h1>
+        <h2>Nos <span>evenements</span></h2>
+    </div>
+    <nav>
+        <ul class="etatevent">
+            <li><a href="/evenements">Prochains Evenements</a></li>
+            <li><a href="/evenements/encours">Evenements en cours</a></li>
+            <li><a href="/evenements/precedent">Précedents evenements</a></li>
+        </ul>
+    </nav>
+    {% for event in events|slice(0, 10) %}
+        {% if event.tournament == true %}
+            <nav class="inscription">
+                <img src="{{ asset('assets/img/afficheJeux/' ~ event.game.getimgGame() ) }}" alt="logo" width="60px" heigth="60px" />
+                <p class="titret"> {{ event.Title }} </p>
+                <p class="titret2"> {{ event.subtitle }} </p>
+                <p class='fordate'> Du: <span> {{ event.getStartDate()|date('d/m/y') }} </span> Au <span>{{ event.getEndDate()|date('d/m/y') }}</span></p>
+                <a class='insciptionbtn' href="{{ event.slug }}" target="_blank">S'inscrire</a>   
+            </nav>
+        {% elseif event.tournament == false %}
+            {% set imageart = event.getImgArt() %}
+                <article class="articletoor">
+                    <div>
+                        <h1>{{ event.title }}<h1>
+                        <h2>{{ event.subtitle }}</h2>
+                        <br/>
+                        <p class='fordate'> Du: <span> {{ event.getStartDate()|date('d/m/y') }} </span> Au <span>{{ event.getEndDate()|date('d/m/y') }}</span></p>
+                    </div>
+                    <div class="endart">
+                        <p>{{event.content }}</p>
+                        <img src="{{ asset('assets/img/imgArticle/' ~ imageart ) }}" alt='image'/>
+                    </div>
+                </article>
+        {% endif %}
+    {% endfor %}
+</main>
+
+{% endblock %}

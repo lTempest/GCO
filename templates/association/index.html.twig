@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'association{% endblock %}
+
+{% block body %}
+<article>
+    <div class="association2">
+        <h1 class="titreasso">Game Center</h1>
+        <p>Le Game Center Online est un événement qui a été créé par le Groupement Numérique Universitaire (GNU) et a commencé à prendre son indépendance au début de la crise du Covid-19. Le projet a par la suite grandi et a décidé de devenir indépendant du GNU.</p>
+        <p>Le Game Center est une association ayant pour but d’organiser des événements sur différents jeux. Au début, les tournois se passaient exclusivement en ligne mais certains gros événements ont pu se dérouler en présentiel. Cette même association gère plusieurs équipes e-sportives représentant le Game Center sur différents jeux et tournois, tout en permettant à ces équipes d’être suivies et encadrées.</p>
+        <p>L’association, constituée par les présents statuts, se propose d’offrir du contenu aux joueur.ses et aux équipes recherchant de la compétition que ce soit en amateur, semi-pro et pro.</p>
+        <img src="{{ asset('assets/img/salle.jpg') }}" alt="salle" width="600px"/>
+    </div>
+    <div class="statasso">
+        <div class="statdown">
+            <p class="plus number">11/08/2021</p>
+            <p>Date de création</p>
+        </div>
+        <div>
+            <p class="plus"><span>+</span> de 40</p>
+            <p class="number" >  </p>
+            <p>Bénévoles dans l'association</p>
+        </div>
+        <div>
+            <p class="plus"><span>+</span> de 3000</p>
+            <p class="number">  </p>
+            <p>Membres sur le discord </p>
+        </div>
+    </div>
+    <div class="association2">
+        <p>Cette démarche résulte du fait que nous apprécions organiser des événements qui permettent à des joueur.ses de se regrouper autour d’une passion commune qui est le jeu vidéo, de participer à des tournois dans de bonnes conditions tout en étant entouré.es par une équipe qui fait son possible pour que tout le monde vive une expérience unique. </p>
+        <p>Ces événements permettent de réunir ces joueur.ses dans des compétitions ayant un large panel de jeux ouverts à tous.tes. Les joueur.ses expérimenté.es comme débutant.es sont les bienvenu.es pour partager et échanger autour de leur passion commune, de laquelle pourra résulter la création de liens d’amitié et/ou de rivalité.</p>
+        <img src="" alt="" />
+    </div>
+    <h1 class="prebureau">Présentation du bureau et des responsables</h1>
+    <div class="bureau">
+        <ul id='responsable'>
+            <li>Pendragon/Arthur (président)  </li>
+            <li>Claudine (présidente)  </li>
+            <li>Spitch/Félicien (trésorier) </li>
+            <li>Kiroad/Anthony (vice-trésorier) </li>
+            <li>Syleam/Maëlys (secrétaire) </li>
+        </ul>
+        <ul>
+            <li>Specter (responsable diffusion)</li>
+            <li>GetDapan (responsable e-sport)</li>
+            <li>Sawneed (responsable e-sport )</li>
+            <li>YashiSensei (responsable e-sport)</li>
+        </ul>
+    </div>
+</article>
+{% endblock %}

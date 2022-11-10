@@ -1,0 +1,902 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@import "@fontsource/audiowide";
+
+/*header*/
+header {
+    display: flex;
+    justify-content: center;
+    background: #001d6b;
+    padding: 20px;
+}
+
+header>a>img {
+    margin-right: 20px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#burger {
+    display: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#burger_menu {
+    display: flex;
+    position: relative;
+    z-index: 45;
+}
+
+#burger_menu>li,
+#burger_menu>li>a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s ease-in;
+}
+
+#burger_menu>li:hover {
+    box-shadow: #6210b0 3px 3px 6px 0px inset, #6210b0 -3px -3px 6px 1px inset;
+    font-weight: bold;
+}
+
+.blockornot {
+    display: block !important;
+}
+
+.blockornot2 {
+    display: flex !important;
+}
+
+/*footer*/
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    border: 1px solid black;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #001d6b;
+    color: white;
+    border-top: 2px solid #6210b0;
+    position: relative;
+}
+
+#burger_logo,
+#footlogo>a {
+    padding: 10px;
+}
+
+/*main home*/
+main>#tournoi {
+    margin: 40px auto;
+    display: block;
+    width: 640px;
+    height: 360px;
+}
+
+.titleevents,
+.teams {
+    width: 90%;
+    margin: 50px auto;
+    border-top: 5px solid black;
+}
+
+.titleevents>h1,
+.titleteams>h1 {
+    -webkit-text-stroke: 2px #6210b0;
+    font-size: 10rem;
+    color: white;
+    opacity: 0.3;
+    font-family: "Audiowide", sans-serif;
+}
+
+.titleevents>h2,
+.titleteams>h2 {
+    position: relative;
+    font-size: 3rem;
+    top: -3rem;
+    text-shadow: 1px 1px 1px black;
+    font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+}
+
+.titleevents>h2>span,
+.titleteams>h2>span {
+    color: #6210b0;
+}
+
+.inscription {
+    width: 60%;
+    padding: 10px;
+    border-bottom: 2px solid #6210b0;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 25px;
+    background: linear-gradient(to left, white 50%, #001d6b 50%) right;
+    background-size: 200%;
+    transition: 1s ease-out;
+}
+
+.inscription:hover {
+    background-position: left;
+    color: white;
+}
+
+.inscription>img {
+    padding: 10px 20px;
+    height: 60px;
+}
+
+.titret,
+.fordate>span {
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.titret2 {
+    padding: 0px 20px;
+}
+
+.insciptionbtn{
+  text-decoration: none;
+  background-color: #001d6b;
+  border-radius: 6px;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  color: #fff;
+  height: 44px;
+  line-height: 2.5;
+  margin: 15px 0 0 20px;
+  padding: 0 25px;
+  text-align: center;
+  transition: all .2s,box-shadow .08s ease-in;
+}
+
+.insciptionbtn-9:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+.insciptionbtn:hover {
+    background-color: white;
+}
+.inscription:hover>.insciptionbtn {
+    color: black;
+    background-color: white;
+}
+
+.etatevent {
+    background-color: #001d6b;
+    border-radius: 25px;
+    align-items: center;
+    gap: var(--length-gap-xl);
+    max-width: 960px;
+    margin: auto;
+    display: flex;
+    min-height: 38px;
+    box-sizing: border-box;
+    width: 90%;
+    gap: var(--length-gap-m);
+}
+
+.etatevent>li {
+    flex-grow: 1;
+    flex-basis: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6210b0;
+    margin: 2px;
+    border-radius: 10px;
+    opacity: 0.7;
+    transition: 0.35s ease;
+}
+.etatevent>li:hover {
+    opacity: 1;
+}
+
+.etatevent>li>a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+}
+
+/*assossiation*/
+.association {
+    background: #001d6b;
+    margin-bottom: 20px;
+}
+
+.association>h1 {
+    padding: 20px;
+    color: white;
+    margin-top: 10rem;
+    font-size: 3rem;
+    text-shadow: 1px 1px 1px black;
+    font-weight: bold;
+    font-family: 'He\'s Dead Jim', sans-serif;
+}
+
+.association>p,
+.association>p>a {
+    text-align: center;
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    color: white;
+}
+
+.association>img {
+    margin: 0 auto;
+    padding: 20px;
+    display: block;
+}
+
+.bureau {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.prebureau {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.bureau {
+    text-align: center;
+    width: 45%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bureau>ul>li,
+.under-img>li {
+    padding: 10px;
+}
+
+/*teams*/
+.titleteams>h1 {
+    text-align: end;
+}
+
+.titleteams>h2 {
+    text-align: center;
+}
+
+#affteam {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card_team {
+    -webkit-clip-path: polygon(10% 0, 100% 0, 89% 100%, 0 100%);
+    clip-path: polygon(10% 0, 100% 0, 89% 100%, 0 100%);
+    margin: 1%;
+}
+
+#barreresau {
+    background-color: #6210b0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.fontpls {
+    font-size: 7rem;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px #001d6b;
+    color: white;
+    padding: 15px;
+}
+
+.logo2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.one {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.titlepart {
+    width: 90%;
+    margin: 80px auto;
+}
+
+.titlepart>h1 {
+    -webkit-text-stroke: 2px #6210b0;
+    font-size: 10rem;
+    color: white;
+    opacity: 0.3;
+    font-family: 'Atmosphere', sans-serif;
+}
+
+.titlepart>h2 {
+    position: relative;
+    font-size: 3rem;
+    top: -6rem;
+    text-shadow: 1px 1px 1px black;
+    font-weight: bold;
+    font-family: 'He\'s Dead Jim', sans-serif;
+}
+
+.titlepart>h2>span {
+    color: #6210b0;
+}
+
+#partenaire {
+    width: 90%;
+    margin: 0 auto;
+    border-top: 5px solid black;
+}
+
+.logopart {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logopart>a {
+    padding: 20px;
+}
+
+/*register*/
+.formregi {
+    width: 80%;
+    margin: 30px auto;
+    display: block;
+    text-align: center;
+    border: 2px solid black;
+    background: #001d6b;
+    border-radius: 25px;
+    color: white;
+    padding: 20px;
+}
+
+input {
+    margin: 15px;
+}
+
+/*L'association*/
+.association2 {
+    background-color: #001d6b;
+    color: white;
+    margin: 5px 0px;
+}
+
+.titreasso {
+    font-size: 3rem;
+    font-family: 'He\'s Dead Jim', sans-serif;
+    padding: 30px;
+    text-align: center;
+}
+
+.association2>p {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px;
+    font-size: 1.2rem;
+}
+
+.association2>img {
+    padding: 40px;
+    margin: 0 auto;
+    display: block;
+}
+
+.plus {
+    padding: 25px;
+    font-size: 1.5rem;
+}
+
+.plus>span {
+    border-radius: 25px;
+    padding: 4px 10px;
+    background-color: #6210b0;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.statasso {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.statdown {
+    margin-top: 35px;
+}
+
+.statasso>div {
+    width: 30%;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/*article*/
+.articletoor {
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #6210b0;
+    border-radius: 6px;
+    background: url("../img/visuelfond.jpg") no-repeat center;
+    transition: 1s ease-out;
+}
+
+.articletoor:hover {
+    box-shadow: grey 3px 3px 6px 0px inset, grey -3px -3px 6px 1px inset;
+}
+
+
+.articletoor>div {
+    padding: 20px;
+    position: relative;
+}
+
+.articletoor>div>h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 0px;
+}
+
+.articletoor div>h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.endart {
+    display: flex;
+    justify-content: space-around;
+}
+
+.endart>img {
+    width: 500px;
+}
+
+.endart>p {
+    padding: 20px;
+    width: 40%;
+}
+
+/*equipe*/
+.barequipe {
+    padding: 20px;
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.barequipe>li {
+    padding: 10px;
+    margin: 10px;
+}
+
+.barequipe li a {
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid black;
+    color: white;
+    background-color: #001d6b;
+    text-decoration: none;
+    transition: ease 0.5s;
+}
+
+.barequipe>li:hover>a {
+    color: #001d6b;
+    background-color: white;
+    border: 1px solid #6210b0;
+}
+
+.contentp {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.card_player {
+    margin: 20px;
+    -webkit-clip-path: polygon(10% 0, 100% 0, 89% 100%, 0 100%);
+    clip-path: polygon(10% 0, 100% 0, 89% 100%, 0 100%);
+    position: relative;
+}
+
+.card_player>li>img {
+    width: 300px;
+    height: 500px;
+}
+
+
+.under-img {
+    text-align: center;
+    position: absolute;
+    z-index: 8;
+    top: 5%;
+    width: 100%;
+}
+
+.under-img>li:first-child {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.prole {
+    background-color: #6210b0;
+    -webkit-clip-path: polygon(10% 0, 100% 0, 89% 100%, 0 100%);
+    clip-path: polygon(10% 0, 100% 0, 89% 100%, 0 100%);
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.presaux {
+    width: 100%;
+    height: 60px;
+    background-color: #001d6b;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.playercardh {
+    visibility: hidden;
+}
+
+.card_player>li:hover>div.playercardh {
+    visibility: initial;
+}
+
+/*responsive*/
+@media screen and (max-width: 1375px) {
+    .inscription {
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        border: none;
+        line-height: initial;
+    }
+
+    .inscription>img {
+        margin: 0 auto;
+    }
+
+    .inscription>p {
+        padding: 15px;
+    }
+
+    .articletoor {
+        text-align: center;
+    }
+
+    .articletoor>p {
+        margin: 20px auto;
+        width: initial;
+        padding: initial;
+    }
+
+    .endart {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .endart>p {
+        width: 100%;
+    }
+
+    .endart>img {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    #barreresau {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .titlepart>h1 {
+        font-size: 7.5rem;
+    }
+
+    .association2>img {
+        width: 250px;
+    }
+
+    .statasso {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .statasso>div {
+        padding: 20px 0px;
+        width: initial;
+    }
+
+    .plus {
+        font-size: initial;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    header>#burger {
+        display: block;
+    }
+
+    header>#burger_menu {
+        display: none;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    #burger_menu {
+        position: absolute;
+        border: 2px solid black;
+        background: #001d6b;
+        top: 110px;
+        /* right: 10%; */
+        right: 0;
+    }
+
+    #burger_menu>li,
+    #burger_menu>li>a {
+        font-size: initial;
+        text-align: left;
+    }
+
+    #burger_logo {
+        font-size: initial;
+    }
+
+    #footlogo {
+        border: 1px solid black;
+        position: absolute;
+        flex-direction: column;
+        bottom: 0;
+        right: 0;
+        display: none;
+        background-color: #3D1CFC;
+    }
+
+    .logo2>a>img {
+        width: 50px;
+    }
+
+    .fontpls {
+        font-size: 5rem;
+    }
+
+    .contentp {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .card_player>li>img {
+        width: 250px;
+        height: 450px;
+    }
+
+}
+
+@media screen and (max-width: 670px) {
+    main>#tournoi {
+        width: 250px;
+    }
+
+    .titleevents>h1,
+    .titleteams>h1 {
+        font-size: 4.5rem;
+    }
+
+    .titleevents>h2,
+    .titleteams>h2 {
+        top: -1rem;
+    }
+
+    .association>img {
+        width: 250px;
+    }
+
+    #barreresau,
+    .logopart {
+        flex-direction: column;
+    }
+
+    .fontpls {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .titlepart>h1 {
+        font-size: 3rem;
+    }
+
+    .barequipe {
+        flex-wrap: wrap;
+    }
+
+    .etatevent {
+        height: 15%;
+    }
+
+    .etatevent>li {
+        display: initial;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .association>h1 {
+        font-size: 2rem;
+    }
+
+    .titlepart>h2 {
+        top: initial;
+    }
+}
